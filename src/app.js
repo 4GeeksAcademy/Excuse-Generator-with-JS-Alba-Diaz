@@ -6,6 +6,25 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
+
+let who = ['The dog', 'My grandma', 'The mailman', 'My bird'];
+let action = ['ate', 'peed', 'crushed', 'broke'];
+let what = ['my homework', 'my phone', 'the car'];
+let when = ['before the class', 'when I was sleeping', 'while I was exercising', 'during my lunch', 'while I was praying'];
+
+
+function RandomNumber (arr) { //function to generate a random number
+    return Math.floor(Math.random()* arr.length)
+ }
+
+function aleatoryNumber(arr) {//function to select an aleatory number
+  return arr[RandomNumber(arr)]
+}
+
+function excuseGenerator (arr1, arr2, arr3, arr4) { //function to generate the excuse
+  return aleatoryNumber(arr1) + " " + aleatoryNumber(arr2) + " " + aleatoryNumber(arr3) + " " + aleatoryNumber(arr4);
+}
+
+document.getElementById("excuse").innerHTML = excuseGenerator(who, action, what, when);
+
 };
